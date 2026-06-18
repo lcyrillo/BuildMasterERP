@@ -23,6 +23,13 @@ public static class DependencyInjection
                     "IdentityDatabase"));
         });
 
+        //JWT
+        services.Configure<JwtOptions>(
+            configuration.GetSection(
+                JwtOptions.SectionName));
+
+        services.AddScoped<ITokenProvider, JwtTokenProvider>();
+
         services.AddScoped<IUserRepository, UserRepository>();
 
         services.AddScoped<IPasswordHasher, BcryptPasswordHasher>();

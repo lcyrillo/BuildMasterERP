@@ -43,4 +43,9 @@ public static class UserErrors
         new(
             "User.EmailAlreadyExists",
             "Email already exists");
+
+    public static readonly Error InvalidCredentials =
+        new(
+            "User.InvalidCredentials",
+            "Email or password is invalid.");
 }
